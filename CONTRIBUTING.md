@@ -414,13 +414,7 @@ Tests are also run automatically on [Travis](https://travis-ci.org/webcompat/web
 
 We use [Intern](http://theintern.io/) to run functional tests.
 
-To run them, make sure you have downloaded the Selenium standalone server from the repo root:
-
-``` bash
-wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
-```
-
-**Note: This version is known to work with Firefox 47.0.1. If things aren't working with the current stable version of Firefox, check to see if there isn't a newer version of the Selenium standalone server and file a bug on these docs!**
+**Note: This version is known to work with Firefox 50.1.0. If things aren't working with the current stable version of Firefox, please [file a bug!](https://github.com/webcompat/webcompat.com/issues/new)**
 
 The `firefox` binary will also need to be in your `PATH`. Here's how this can be done on OS X:
 
@@ -432,19 +426,13 @@ If you are a member of webcompat organization in GitHub, edit `config/secrets.py
 
 Change the value to : `ISSUES_REPO_URI = 'webcompat/webcompat-tests/issues'`.
 
-Now start Selenium:
-
-``` bash
-java -jar selenium-server-standalone-2.53.1.jar
-```
-
-In a separate terminal window or tab, start the application servers:
+Start the application server:
 
 ``` bash
 source env/bin/activate && python run.py
 ```
 
-In another separate terminal window or tab, run the tests:
+In a separate terminal window or tab, run the tests:
 
 ``` bash
 node_modules/.bin/intern-runner config=tests/intern
